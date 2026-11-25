@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "embedding-clips"
+version = "0.1.0"
+description = "DINOv2 / CLIP video similarity store for cricket delivery clips"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["dinov2", "clip", "video", "embeddings", "cricket"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "numpy>=1.24",
+  "opencv-python-headless>=4.8",
+  "torch>=2.1",
+  "torchvision>=0.16",
+]
+
+[project.optional-dependencies]
+clip = ["open_clip_torch>=2.24"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+embedding-clips = "embedding_clips.cli:main"
+
+[tool.setuptools]
+# Flat layout: this directory IS the Python package `embedding_clips`.
+packages = ["embedding_clips"]
+package-dir = { "embedding_clips" = "." }

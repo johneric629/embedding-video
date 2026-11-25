@@ -1,0 +1,13 @@
+# Core (also declared in pyproject.toml). Prefer: pip install -e .
+numpy>=1.24
+opencv-python-headless>=4.8
+torch>=2.1
+torchvision>=0.16
+
+# Optional CLIP backbones:
+#   pip install -e ".[clip]"
+# open_clip_torch>=2.24
+
+# GPU tip: install matching CUDA wheels from https://pytorch.org
+# Example CUDA 12.1:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
